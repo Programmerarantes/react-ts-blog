@@ -1,16 +1,11 @@
 // hooks/usePost.ts
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Post } from '../types/post-type';
 
 const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/blogs';
 
-export interface Post {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  publishedAt: string;
-}
+
 
 export function usePost(postId: string) {
   const [post, setPost] = useState<Post | null>(null);

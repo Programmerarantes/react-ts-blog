@@ -1,15 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Post } from '../types/post-type';
 
 const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/blogs?populate=*';
-
-export interface Post {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  publishedAt: string;
-}
 
 export function usePosts() {
   const [posts, setPosts] = useState<Post[]>([]);
