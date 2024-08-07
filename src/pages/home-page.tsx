@@ -1,12 +1,13 @@
 // pages/HomePage.tsx
 import React from 'react';
 import PostList from '../components/post-list';
+import Navbar from '../components/navbar';
 
 
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>navbar component</h1>
+      <Navbar />
       <PostList />
     </div>
   );

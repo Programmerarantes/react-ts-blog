@@ -23,7 +23,7 @@ const PostDetailPage: React.FC = () => {
         <div className="max-w-4xl mx-auto my-8 p-4 bg-white shadow-md rounded-lg ">
             <h1 className="text-3xl font-bold mb-4 text-center md:text-left">{post.title}</h1>
             <img 
-                src={`https://my-blog-strapi-06zj.onrender.com${post.imageUrl}`} 
+                src={`http://localhost:1337${post.imageUrl}`} 
                 alt={post.title} 
                 className="w-full h-auto mb-6 object-cover rounded"
             />

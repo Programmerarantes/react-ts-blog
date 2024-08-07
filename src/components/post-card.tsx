@@ -7,15 +7,13 @@ interface PostCardProps {
     post: Post;
 }
 
-// src={`https://my-blog-strapi-06zj.onrender.com${post.imageUrl}`}
-
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
     return (
         <div className="max-w-4xl mx-auto my-4 p-4 bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                     <img 
-                        src={`https://my-blog-strapi-06zj.onrender.com${post.imageUrl}`} 
+                        src={`http://localhost:1337${post.imageUrl}`} 
                         alt={post.title} 
                         className="object-cover w-full h-48 md:h-full"
                     />
