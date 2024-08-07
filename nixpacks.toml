@@ -1,0 +1,10 @@
+[build]
+  base = "node"
+
+[dependencies]
+  node = "18"
+  npm = "9"
+
+[commands]
+  build = "npm run build"
+  start = "npm run start"
