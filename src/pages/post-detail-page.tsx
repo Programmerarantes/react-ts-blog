@@ -1,4 +1,3 @@
-// pages/PostDetailPage.tsx
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { usePost } from '../hook/use-post';
@@ -21,7 +20,9 @@ const PostDetailPage: React.FC = () => {
 
   return (
         <div className="max-w-4xl mx-auto my-8 p-4 bg-white shadow-md rounded-lg ">
-            <h1 className="text-3xl font-bold mb-4 text-center md:text-left">{post.title}</h1>
+            <div className="text-center mt-20">
+              <h1 className="text-3xl font-bold mb-4 text-center md:text-center">{post.title}</h1>
+            </div>
             <img 
                 src={`http://localhost:1337${post.imageUrl}`} 
                 alt={post.title} 

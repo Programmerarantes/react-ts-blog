@@ -1,16 +1,12 @@
-// pages/HomePage.tsx
 import React from 'react';
-import PostList from '../components/post-list';
-import Navbar from '../components/navbar';
-
 
 const HomePage: React.FC = () => {
   return (
-    <div>
-      <Navbar />
-      <PostList />
+    <div className="text-center mt-20">
+      <h1 className="text-5xl font-bold">Hello World</h1>
     </div>
+    
   );
 };
 
-export default HomePage;
+export default HomePage
