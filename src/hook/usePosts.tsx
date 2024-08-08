@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Post, ApiResponse, PostData } from '../types/post-type';
 
-const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/blogs?populate=*';
+const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/articles?populate=*';
 
 export function usePosts() {
   const [posts, setPosts] = useState<Post[]>([]);

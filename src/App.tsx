@@ -1,10 +1,10 @@
 import React from 'react';
 import {  Routes, Route, BrowserRouter } from 'react-router-dom'
 import './index.css';
-import HomePage from './pages/home-page';
-import PostDetailPage from './pages/post-detail-page';
-import BlogPage from './pages/blog-page';
-import Navbar from './components/navbar';
+import HomePage from './pages/HomePage';
+import BlogPost from './pages/BlogPost';
+import BlogPage from './pages/BlogPage';
+import Navbar from './components/Navbar';
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <Navbar />
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/post/:postId" element={<PostDetailPage />} />
+        <Route path="/post/:postId" element={<BlogPost />} />
         <Route path='/blog' element={<BlogPage/>}/>
       </Routes>
     </BrowserRouter>

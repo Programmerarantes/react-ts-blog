@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { usePost } from '../hook/use-post';
+import { usePost } from '../hook/usePost';
 
 const PostDetailPage: React.FC = () => {
   const { postId } = useParams<{ postId: string }>();
@@ -32,7 +32,7 @@ const PostDetailPage: React.FC = () => {
             <small className="text-gray-500 block mb-6">{new Date(post.publishedAt).toLocaleDateString()}</small>
             <div className="text-center md:text-left">
                 <Link 
-                    to="/" 
+                    to="/blog" 
                     className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
                 >
                     Voltar

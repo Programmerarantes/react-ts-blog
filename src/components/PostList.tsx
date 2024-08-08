@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { usePosts } from '../hook/use-posts';
-import PostCard from './post-card';
+import { usePosts } from '../hook/usePosts';
+import PostCard from './PostCard';
 
 
 

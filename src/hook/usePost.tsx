@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Post } from '../types/post-type';
 
-const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/blogs';
+const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/articles';
 
 
 
