@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const navigation = [
         { name: 'Início', href: '/', current: true },
-        { name: 'Sobre nós', href: '/', current: false },
+        { name: 'Sobre nós', href: '/aboutus', current: false },
         { name: 'Blog', href: '/blog', current: false },
         { name: 'Contato', href: '/', current: false },
     ];

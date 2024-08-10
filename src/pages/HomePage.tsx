@@ -1,9 +1,16 @@
 import React from 'react';
-import HomeHero from '../components/HomeHero';
+import { HomeHeroSection } from '../components/HomeHeroSection';
+import BlogSection from '../components/BlogHomeSection';
+import AboutSection from '../components/AboutUsHomeSection';
+
 
 const HomePage: React.FC = () => {
   return (
-    <HomeHero />
+    <div>
+      <HomeHeroSection />
+      <BlogSection />
+      <AboutSection />
+    </div>
     
   );
 };
