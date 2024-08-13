@@ -3,8 +3,8 @@
 
 [dependencies]
   node = "18"
-  npm = "10"
+  npm = "9"
 
 [commands]
-  build = "npm run build"
+  build = "CI=false npm run build"
   start = "npm run start"

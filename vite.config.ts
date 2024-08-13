@@ -13,11 +13,4 @@ export default defineConfig({
       plugins : [tailwindcss()]
     }
   },
-  define: {
-    'process.env': {
-      VITE_STRAPI_API_TOKEN: process.env.VITE_STRAPI_API_TOKEN,
-      VITE_PAGE_LIMIT: process.env.VITE_PAGE_LIMIT,
-      VITE_STRAPI_API_URL: process.env.VITE_STRAPI_API_URL,
-    }
-  }
 })
