@@ -6,5 +6,5 @@
   npm = "9"
 
 [commands]
-  build = "CI=false npm run build"
+  build = "npm run build"
   start = "npm run start"
