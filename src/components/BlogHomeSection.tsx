@@ -11,7 +11,7 @@ const BlogSection: React.FC = () => {
           'https://my-blog-strapi-06zj.onrender.com/api/articles?populate=*'
         );
         const data = await response.json();
-        setArticles(data.data.slice(0, 3)); // Pegando os 3 primeiros posts
+        setArticles(data.data.slice(0, 3));
       } catch (error) {
         console.error('Erro ao buscar os artigos:', error);
       }

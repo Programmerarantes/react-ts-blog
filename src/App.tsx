@@ -9,7 +9,6 @@ import AboutUsPage from './pages/AboutUs';
 
 const App: React.FC = () => {
   return (
-    
     <BrowserRouter>
     <Navbar />
       <Routes>

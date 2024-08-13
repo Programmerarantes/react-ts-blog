@@ -1,5 +1,4 @@
-// src/types/Post.ts
-export interface ArticleAttributes {
+interface ArticleAttributes {
     title: string;
     description: string;
     slug: string;
