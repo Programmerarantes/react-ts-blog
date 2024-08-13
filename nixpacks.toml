@@ -7,4 +7,4 @@
 
 [commands]
   build = "npm run build"
-  start = "npm run dev"
+  start = "npm run start"
