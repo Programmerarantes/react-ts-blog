@@ -2,18 +2,18 @@ import React from 'react';
 import {  Routes, Route, BrowserRouter } from 'react-router-dom'
 import './index.css';
 import HomePage from './pages/HomePage';
-import BlogPost from './pages/ArticlePage';
+import ArticlePage from './pages/ArticlePage';
 import BlogPage from './pages/BlogPage';
-import Navbar from './components/Navbar';
+import MenuBar from './components/MenuBar';
 import AboutUsPage from './pages/AboutUs';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-    <Navbar />
+    <MenuBar />
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/post/:postId" element={<BlogPost />} />
+        <Route path="/post/:postId" element={<ArticlePage />} />
         <Route path='/blog' element={<BlogPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage />} />
       </Routes>

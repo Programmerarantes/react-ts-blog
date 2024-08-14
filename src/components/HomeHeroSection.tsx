@@ -8,7 +8,7 @@ const fetchArticle = async ():Promise<Article> => {
 
 }
 
-export const HomeHeroSection = () => {
+const HomeHeroSection = () => {
   const [article, setArticle ] = useState<Article | null>(null)
 
   useEffect(() => {
@@ -61,3 +61,5 @@ export const HomeHeroSection = () => {
     </section>
   );
 }
+
+export default HomeHeroSection

@@ -23,15 +23,13 @@ const BlogSection: React.FC = () => {
   return (
     <section className="bg-white py-8">
       <div className="container mx-auto">
-        {/* Título e Link */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold text-gray-800">Nosso Blog</h2>
           <a href="/blog" className="text-blue-500 hover:underline">
             Acesse aqui
           </a>
         </div>
-
-        {/* Grid de Posts */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {articles.map((article) => {
             const { title, publishedAt, authorsBio } = article.attributes;

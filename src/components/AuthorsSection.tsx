@@ -18,7 +18,7 @@ interface Author {
   };
 }
 
-export const AuthorsHome: React.FC = () => {
+const AuthorsHome: React.FC = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
 
   useEffect(() => {
@@ -65,3 +65,6 @@ export const AuthorsHome: React.FC = () => {
     </section>
   );
 };
+
+
+export default AuthorsHome
