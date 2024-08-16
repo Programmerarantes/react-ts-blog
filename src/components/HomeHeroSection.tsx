@@ -52,7 +52,7 @@ const HomeHeroSection = () => {
         </div>
         <div className="image-section w-full md:w-1/2 p-4">
           <img
-            src={image.data.attributes.url}
+            src={`${image.data?.attributes.url}`}
             alt={title}
             className="w-full h-auto object-cover rounded-lg shadow-lg"
           />

@@ -96,7 +96,7 @@ const PostDetailPage: React.FC = () => {
                 <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
             </div>
             <img
-                src={image ? `https://my-blog-strapi-06zj.onrender.com${image.data?.attributes.url}` : ''}
+                src={image ? `${image.data?.attributes.url}` : ''}
                 alt={title}
                 className="w-full h-auto mb-6 object-cover rounded"
             />

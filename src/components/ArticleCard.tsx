@@ -7,13 +7,15 @@ interface ArticleCardProps {
    article: Article;
 }
 
-const IMG_URL = 'https://my-blog-strapi-06zj.onrender.com/uploads'
+// image ? `https://my-blog-strapi-06zj.onrender.com${image.data?.attributes.url}` : ''
+
+const IMG_URL = 'https://my-blog-strapi-06zj.onrender.com'
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
 
     if(!article || !article.attributes) return null   
     const { title, publishedAt , description, image, category, authorsBio } = article.attributes
-    const imageUrl = image?.data?.attributes?.url
+    const imageUrl = image.data?.attributes?.url
 
 
     return (
@@ -21,7 +23,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                     <img 
-                        src={`${IMG_URL}${imageUrl}`} 
+                        src={`${imageUrl}`}
                         alt={title} 
                         className="object-cover w-full h-48 md:h-full"
                     />
