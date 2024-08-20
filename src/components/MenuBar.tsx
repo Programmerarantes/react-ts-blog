@@ -39,8 +39,8 @@ const MenuBar = () => {
                         <div className="flex flex-shrink-0 items-center">
                             <img
                                 alt="Your Company"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
+                                src="https://res.cloudinary.com/dasvwni1e/image/upload/v1724162234/depapocomasdoulas_yjgzpw.jpg"
+                                className="h-11 w-auto"
                             />
                         </div>
                         <div className="hidden sm:ml-6 sm:block">

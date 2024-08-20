@@ -7,10 +7,6 @@ interface ArticleCardProps {
    article: Article;
 }
 
-// image ? `https://my-blog-strapi-06zj.onrender.com${image.data?.attributes.url}` : ''
-
-const IMG_URL = 'https://my-blog-strapi-06zj.onrender.com'
-
 export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
 
     if(!article || !article.attributes) return null   
