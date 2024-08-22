@@ -1,10 +1,14 @@
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-8">
+        <footer className="bg-gray-800 text-white py-8 mt-8">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-6">
-                    <div className="w-full md:w-1/2 mb-4 md:mb-0">
-                        <img src="#" alt="Logo" className="mx-auto h-12 w-auto" />
+                    <div className="mb-6">
+                        <img 
+                            src="https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1724162234/depapocomasdoulas_yjgzpw.jpg" 
+                            alt="Logo" 
+                           className="mx-auto h-24 w-auto" 
+                        />
                     </div>
 
                     <div className="bg-gray-700 py-10 rounded-lg">

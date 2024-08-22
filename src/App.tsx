@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import BlogPage from './pages/BlogPage';
 import MenuBar from './components/MenuBar';
-import AboutUsPage from './pages/AboutUs';
+import AboutUsPage from './pages/AboutUsPage';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
