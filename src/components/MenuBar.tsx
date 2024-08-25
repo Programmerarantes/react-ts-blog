@@ -8,7 +8,7 @@ const MenuBar = () => {
         { name: 'Início', href: '/', current: true },
         { name: 'Sobre nós', href: '/aboutus', current: false },
         { name: 'Blog', href: '/blog', current: false },
-        { name: 'Contato', href: '/', current: false },
+        { name: 'Contato', href: '/contact', current: false },
     ];
 
     const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
