@@ -61,7 +61,6 @@ export const AboutUs = () => {
                     </p>
                 </div>
             </div>
-            <h1 className="text-2xl font-bold text-center mb-12">Quem somos</h1>
             <div className="grid grid-cols-1 gap-8">
                 {equipe.map((member, index) => (
                     <div
