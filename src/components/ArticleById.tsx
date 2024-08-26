@@ -36,7 +36,7 @@ interface Article {
 }
 
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import BlogSection from './BlogHomeSection';
 
 
@@ -98,7 +98,7 @@ const ArticleById: React.FC = () => {
                         />
                         <div>
                             <h3 className="text-xl font-bold">{authorsBio.data.attributes.name}</h3>
-                            <p className="text-gray-500">{new Date(publishedAt).toLocaleDateString()}</p>
+                            <p className="text-gray-500">{new Date(publishedAt).toLocaleDateString()} | {category.data.attributes.name}</p>
                         </div>
                         
                     </div>
