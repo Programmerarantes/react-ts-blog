@@ -12,30 +12,31 @@ const ContactForm = () => {
           <input
             type="text"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Full Name"
+            placeholder="Nome Completo"
           />
         </div>
         <div className="mb-6">
           <input
             type="email"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Your Email"
+            placeholder="Email"
           />
         </div>
         <div className="mb-6">
           <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           >
-            <option value="">Query Related</option>
-            <option value="general">General Inquiry</option>
-            <option value="support">Support Request</option>
-            <option value="feedback">Feedback</option>
+            <option value="">Doula</option>
+            <option value="general">Yoga para Gestante</option>
+            <option value="support">Consultoria Amamentação</option>
+            <option value="feedback">Uso da placenta</option>
+            <option value="feedback">Terapia integrativa</option>
           </select>
         </div>
         <div className="mb-6">
           <textarea
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Message"
+            placeholder="Mensagem"
             
             style={{ resize: 'none' }}
           ></textarea>
@@ -44,7 +45,7 @@ const ContactForm = () => {
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Send Message
+          Enviar Mensagem
         </button>
       </form>
     </div>

@@ -5,9 +5,9 @@ const Footer = () => {
                 <div className="text-center mb-6">
                     <div className="mb-6">
                         <img 
-                            src="https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1724162234/depapocomasdoulas_yjgzpw.jpg" 
+                            src="https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1724162234/depapocomasdoulas_yjgzpw.jpg" 
                             alt="Logo" 
-                           className="mx-auto h-24 w-auto" 
+                           className="mx-auto h-24 w-auto rounded-full" 
                         />
                     </div>
 

@@ -114,7 +114,7 @@ const ArticleById: React.FC = () => {
                         />
                     </div>
                     
-                    <p className="text-lg text-justify leading-relaxed mb-4">
+                    <p className="text-base text-justify leading-relaxed mb-4 mx-auto md:w-3/4">
                     {description}
                     </p>
                 </div>

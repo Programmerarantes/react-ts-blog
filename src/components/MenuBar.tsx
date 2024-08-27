@@ -5,7 +5,7 @@ const MenuBar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navigation = [
-        { name: 'Início', href: '/', current: true },
+        { name: 'Início', href: '/', current: false },
         { name: 'Sobre nós', href: '/aboutus', current: false },
         { name: 'Blog', href: '/blog', current: false },
         { name: 'Contato', href: '/contact', current: false },

@@ -44,7 +44,7 @@ const AuthorsHome: React.FC = () => {
         <h2 className="text-3xl font-bold text-center mb-6">Equipe</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {authors.map((author) => (
-            <div key={author.id} className="text-center">
+            <div key={author.id} className="text-center bg-gray-100 py-6 mx-6 rounded-2xl">
               {author.attributes.avatar?.data?.attributes?.url ? (
                 <img
                   src={`${author.attributes.avatar.data.attributes.url}`}
