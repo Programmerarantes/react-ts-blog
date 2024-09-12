@@ -18,4 +18,5 @@
 
 # start the caddy web server
 [start]
+    dependsOn = ['fmt'] # make sure formatting happens before starting Caddy
     cmd = 'exec caddy run --config Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter
