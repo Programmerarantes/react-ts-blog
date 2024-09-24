@@ -10,21 +10,43 @@ const fetchArticle = async ():Promise<Article> => {
 
 const HomeHeroSection = () => {
   const [article, setArticle ] = useState<Article | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const loadArticle = async () => {
       try {
         const latestArticle = await fetchArticle()
         setArticle(latestArticle)
-        console.log(latestArticle)
       } catch (error) {
         console.log('Erro ao buscar o artigo', error)
       }
+      setLoading(false)
     }
     loadArticle()
   }, [])
 
-    if (!article) return <p>Carregando...</p>;
+    if (loading) {
+      return (
+        <section className="bg-gray-100 py-8">
+          <div className="container mx-auto flex flex-col md:flex-row items-center animate-pulse space-y-6 md:space-y-0">
+            <div className="w-full md:w-1/2 p-4 space-y-4">
+              <div className="h-4 bg-gray-300 rounded w-1/2 md:w-1/3 mb-4"></div>
+              <div className="h-8 bg-gray-300 rounded w-2/3 md:w-2/3 mb-4"></div>
+              <div className="h-4 bg-gray-300 rounded w-3/4 mb-4"></div>
+              <div className="h-6 bg-gray-300 rounded w-full mb-4"></div>
+              <div className="h-10 bg-gray-300 rounded w-1/3 md:w-1/4"></div>
+            </div>
+            <div className="w-full md:w-1/2 p-4">
+              <div className="w-full h-64 md:h-96 bg-gray-300 rounded-lg"></div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    if(!article) {
+      return <p>Erro ao carregar o artigo</p>
+    }
 
 
   const { title, description, publishedAt, category, authorsBio, image } = article.attributes

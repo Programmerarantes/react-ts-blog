@@ -8,9 +8,9 @@ import AuthorsHome  from '../components/AuthorsSection';
 const HomePage: React.FC = () => {
   return (
     <div>
+      <AboutSection />
       <HomeHeroSection />
       <BlogSection />
-      <AboutSection />
       <AuthorsHome />
     </div>
     

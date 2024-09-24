@@ -21,13 +21,6 @@ const equipe = [
         imageUrl: 'https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1723831596/small_portrait_young_school_student_d3b1cc28a8.jpg',
         link: '/about/diana'
     },
-    {
-        name: 'Nassandra',
-        role: 'Trabalho com a placenta',
-        description: 'Nassandra trabalha com o processamento da placenta, oferecendo alternativas para aproveitar os benefícios naturais pós-parto.',
-        imageUrl: 'https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1723831596/small_portrait_young_school_student_d3b1cc28a8.jpg',
-        link: '/about/nassandra'
-    }
 ]
 
 

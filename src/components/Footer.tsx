@@ -16,7 +16,7 @@ const Footer = () => {
                             <p>Assine nossa newsletter para receber as últimas atualizações e novidades</p>
                             <div className="flex items-center space-x-2">
                                 <input type="email" placeholder="Insira seu email" className="px-3 py-2 rounded-1-md text-black focus:outline-none" />
-                                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Inscrever-se</button>
+                                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 w-full sm:w-auto">Inscrever-se</button>
                             </div>
                         </div>
                     </div>
