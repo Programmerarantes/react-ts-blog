@@ -3,10 +3,19 @@ import { Article } from '../types/Article';
 import { ArticleCard } from './ArticleCard';
 
 
-const fetchArticles = async (page: number, pageSize: number): Promise<{articles: Article[], total: number}> => {
+interface ApiResponse {
+  data: Article[]
+  meta: {
+    pagination: {
+      total: number
+    }
+  }
+}
+
+const fetchArticles = async (page: number, pageSize: number): Promise<{ articles: Article[], total: number }> => {
   const response = await fetch(`https://my-blog-strapi-06zj.onrender.com/api/articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`)
-  const data = await response.json()
-  return {articles: data.data, total: data.meta.pagination.total }
+  const data:ApiResponse = await response.json()
+  return { articles: data.data, total: data.meta.pagination.total }
 
 }
 
@@ -28,57 +37,56 @@ const ArticleCardSkeleton = () => (
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState<Article[]>([])
-  const [isloading, setIsLoading] = useState(true)
-  const [currentPage, setCurrentPage] = useState(1)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [currentPage, setCurrentPage] = useState<number>(1)
   const itemsPerPage = 5
-  const [totalPages, setTotalPages] = useState(1)
-  
+  const [totalArticles, setTotalArticles] = useState<number>(0)
 
-  useEffect(() => {
-    const loadArticles = async () => {
-      const {articles , total }= await fetchArticles(currentPage, itemsPerPage)
-      setArticles(articles)
-      setTotalPages(Math.ceil(total / itemsPerPage))
+  const loadArticles = async() => {
+    try {
+      setIsLoading(true)
+      const {articles: newArticles, total} = await fetchArticles(currentPage, itemsPerPage)
+      setArticles((prevArticles) => [...prevArticles, ...newArticles])
+      setTotalArticles(total)
+    } catch (error) {
+      console.error("Erro ao carregar artigos:", error)
+    } finally {
       setIsLoading(false)
     }
-    loadArticles()
-  }, [currentPage])
+  }
+
+  useEffect(() => {loadArticles()}, [currentPage])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop + 100 >=
+        document.documentElement.scrollHeight && 
+        articles.length < totalArticles
+      ) {
+        setCurrentPage((prevPage) => prevPage + 1)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [articles, totalArticles])
+  
 
   return (
     <div>
       <h1 className="text-3xl font-bold text-center my-8 border-b pb-4">BLOG</h1>
 
-      {isloading ? (
-        <div>
-          {Array.from({ length: itemsPerPage }).map((_, idx) => (
-            <ArticleCardSkeleton key={idx} />
-          ))}
+      {articles.map((article) => (
+        <div key={article.id}>
+          <ArticleCard article={article}/>
         </div>
-      ) : (
-        articles.map((article) => (
-          <div key={article.id}>
-            <ArticleCard article={article} />
-          </div>
-        ))
-      )}
+      ))}
 
-      <div className="flex justify-center mt-8">
-        <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-          className="px-4 py-2 mx-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
-        >,
-          Anterior
-        </button>
-        <span className="px-4 py-2 mx-2">{currentPage} de {totalPages}</span>
-        <button
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 mx-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
-        >
-          Próximo
-        </button>
-      </div>
+      {isLoading && Array.from({length: itemsPerPage}).map((_, idx) => <ArticleCardSkeleton key={idx}/>)}
+
+      {!isLoading && articles.length >= totalArticles && (
+        <p className='text-center text-gray-500 my-4'></p>
+      )}
     </div>
   );
 };
