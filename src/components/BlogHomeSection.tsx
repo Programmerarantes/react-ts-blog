@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Article } from '../types/Article';
 
-const BlogSection: React.FC = () => {
+const BlogSection = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true)
 
@@ -24,14 +24,12 @@ const BlogSection: React.FC = () => {
 
 
   return (
-    <section className="bg-white py-8">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-800">Nosso Blog</h2>
-        </div>
-
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Nosso Blog</h2>
+      
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 lg:max-w-none lg:grid-cols-3">
             {Array(3).fill(0).map((_, idx) => (
               <div
                 key={idx}
@@ -48,7 +46,7 @@ const BlogSection: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 md:grid-cols-3 lg:max-w-none lg:grid-cols-3">
             {articles.map((article) => {
               const { title, publishedAt, authorsBio, image } = article.attributes;
 

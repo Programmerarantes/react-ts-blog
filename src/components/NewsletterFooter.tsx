@@ -1,4 +1,3 @@
-import { FaHandPaper } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
 import { MdOutlinePregnantWoman } from "react-icons/md";
 
@@ -13,7 +12,7 @@ const NewsletterFooter = () => {
                             Inscreva-se em nossa newsletter
                         </h2>
                         <p className="mt-4 text-lg text-gray-300">
-                            O melhor investimento que pode fazer é a informação!
+                            O melhor investimento é a informação!
                         </p>
                         <div className="mt-6 flex max-w-md gap-x-4">
                             <label htmlFor="email-address" className="sr-only">
