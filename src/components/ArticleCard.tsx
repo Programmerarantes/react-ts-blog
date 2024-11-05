@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import  { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '../types/Article';
 
@@ -7,7 +6,7 @@ interface ArticleCardProps {
     article: Article;
 }
 
-export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+export const ArticleCard = ({ article }: ArticleCardProps) => {
 
     if (!article || !article.attributes) return null
 
@@ -15,7 +14,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
     const imageUrl = image.data?.attributes?.url
 
     const [loadedImageUrl, setLoadedImageUrl] = useState<string | null>(null)
-    const [isImageLoading, setIsImageLoading] = useState(true)
+    const [isImageLoading, setIsImageLoading] = useState<boolean>(true)
 
     useEffect(() => {
         if (imageUrl) {
@@ -24,6 +23,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             img.onload = () => {
                 setLoadedImageUrl(imageUrl)
                 setIsImageLoading(false)
+            }
+            return () => {
+                img.onload = null
             }
         }
     }, [imageUrl])

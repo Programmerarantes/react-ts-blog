@@ -1,33 +1,63 @@
 export interface Article {
-  id: string;
+  id: number;
+  attributes: ArticleAttributes
+
+}
+export interface ArticleAttributes {
+  title: string;
+  description: string;
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  image: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
+  category: {
+    data: {
+      attributes: {
+        name: string;
+        slug: string;
+      };
+    };
+  };
+  authorsBio: {
+    data: {
+      attributes: {
+        name: string;
+      };
+    };
+  };
+
+}
+
+
+export interface Author {
+  id: number;
   attributes: {
-    title: string;
-    description: string;
-    slug: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    image: {
+    name: string;
+    instagram?: string;
+    whatsapp?: string;
+    role: string;
+    avatar: {
       data: {
         attributes: {
-          url: string;
-        };
-      };
-    };
-    category: {
-      data: {
-        attributes: {
-          name: string;
-          slug: string;
-        };
-      };
-    };
-    authorsBio: {
-      data: {
-        attributes: {
-          name: string;
+          formats: {
+            thumbnail: {
+              url: string
+            }
+          }
+          url?: string;
         };
       };
     };
   };
+}
+
+export interface ArticleApiResponse {
+  data: Article[]
 }

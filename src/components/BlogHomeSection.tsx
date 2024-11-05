@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Article } from '../types/Article';
+import { Article, ArticleApiResponse } from '../types/Article';
 
 const BlogSection = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -11,7 +11,7 @@ const BlogSection = () => {
         const response = await fetch(
           'https://my-blog-strapi-06zj.onrender.com/api/articles?populate=*'
         );
-        const data = await response.json();
+        const data: ArticleApiResponse = await response.json();
         setArticles(data.data.slice(0, 3));
         setLoading(false)
       } catch (error) {

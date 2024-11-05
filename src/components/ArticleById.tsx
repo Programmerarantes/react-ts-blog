@@ -1,50 +1,14 @@
-interface ArticleAttributes {
-    title: string;
-    description: string;
-    slug: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    image: {
-        data: {
-            attributes: {
-                url: string;
-            };
-        };
-    };
-    category: {
-        data: {
-            attributes: {
-                name: string;
-                slug: string;
-            };
-        };
-    };
-    authorsBio: {
-        data: {
-            attributes: {
-                name: string;
-            };
-        };
-    };
-
-}
-
-interface Article {
-    id: number;
-    attributes: ArticleAttributes;
-}
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogSection from './BlogHomeSection';
+import { Article } from '../types/Article';
 
 
 const API_URL = 'https://my-blog-strapi-06zj.onrender.com/api/articles';
 
 const perfilPicture = 'https://res.cloudinary.com/dasvwni1e/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1723831594/perfil_3_092f2ed0d0.jpg'
 
-const ArticleById: React.FC = () => {
+const ArticleById = () => {
     const { articleId } = useParams<{ articleId: string }>();
     const [article, setArticle] = useState<Article | null>(null);
     const [error, setError] = useState<string | null>(null);
