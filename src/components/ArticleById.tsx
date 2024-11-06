@@ -37,6 +37,7 @@ const ArticleById = () => {
     }, [articleId]);
 
     if (loading) {
+        //precisa fazer um skeleton shimmering aqui
         return <div>Carregando...</div>;
     }
 

@@ -14,7 +14,7 @@ interface ApiResponse {
 
 const fetchArticles = async (page: number, pageSize: number): Promise<{ articles: Article[], total: number }> => {
   const response = await fetch(`https://my-blog-strapi-06zj.onrender.com/api/articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`)
-  const data:ApiResponse = await response.json()
+  const data: ApiResponse = await response.json()
   return { articles: data.data, total: data.meta.pagination.total }
 
 }
@@ -42,10 +42,10 @@ const ArticlesList = () => {
   const itemsPerPage = 5
   const [totalArticles, setTotalArticles] = useState<number>(0)
 
-  const loadArticles = async() => {
+  const loadArticles = async () => {
     try {
       setIsLoading(true)
-      const {articles: newArticles, total} = await fetchArticles(currentPage, itemsPerPage)
+      const { articles: newArticles, total } = await fetchArticles(currentPage, itemsPerPage)
       setArticles((prevArticles) => [...prevArticles, ...newArticles])
       setTotalArticles(total)
     } catch (error) {
@@ -55,22 +55,22 @@ const ArticlesList = () => {
     }
   }
 
-  useEffect(() => {loadArticles()}, [currentPage])
+  useEffect(() => { loadArticles() }, [currentPage])
 
   useEffect(() => {
     const handleScroll = () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 100 >=
-        document.documentElement.scrollHeight && 
+        !isLoading &&
+        window.innerHeight + document.documentElement.scrollTop + 100 >= document.documentElement.scrollHeight &&
         articles.length < totalArticles
       ) {
-        setCurrentPage((prevPage) => prevPage + 1)
+        setCurrentPage((prevPage) => prevPage + 1);
       }
-    }
+    };
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [articles, totalArticles])
-  
+
 
   return (
     <div>
@@ -78,11 +78,11 @@ const ArticlesList = () => {
 
       {articles.map((article) => (
         <div key={article.id}>
-          <ArticleCard article={article}/>
+          <ArticleCard article={article} />
         </div>
       ))}
 
-      {isLoading && Array.from({length: itemsPerPage}).map((_, idx) => <ArticleCardSkeleton key={idx}/>)}
+      {isLoading && Array.from({ length: itemsPerPage }).map((_, idx) => <ArticleCardSkeleton key={idx} />)}
 
       {!isLoading && articles.length >= totalArticles && (
         <p className='text-center text-gray-500 my-4'></p>
